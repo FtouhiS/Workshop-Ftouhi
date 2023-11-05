@@ -1,0 +1,44 @@
+<form #f="ngForm"(ngSubmit)="add(f)">
+    <div class="form-floating mb-3">
+        
+        <input type="text" class="form-control" id="floatingInput" required minlength="3" name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel" placeholder="FirstName"> 
+        <label for="floatingInput"> First Name</label>
+
+        <div class="alert alert-danger"
+        *ngIf="firstName.invalid &&( firstName.touched || firstName.dirty)">
+<div  *ngIf="firstName.errors!['required']" > FirstName is required!</div>
+<div *ngIf="firstName.errors!['minlength']" >    FirstName must be at least 3 characters!</div>
+</div>
+ </div>
+      <div class="form-floating">
+
+        <input type="text" class="form-control" id="floatingInput"name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel"  placeholder="Last Name">
+        <label for="floatingInput">Last Name</label>
+
+      </div>
+      <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floatingInput" name="email" [(ngModel)]="user.email" #email="ngModel"  placeholder="name@esprit.tn">
+    <label for="floatingInput">Email address</label>
+
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="user.password" #password="ngModel"  placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="floatingInput" name="birthDate" [(ngModel)]="user.birthDate" #birthDate="ngModel"  placeholder="Birth Date">
+        <label for="floatingInput">BirthDate</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput"name="profession" [(ngModel)]="user.profession" #profession="ngModel"   placeholder="Profession">
+        <label for="floatingInput">Profession</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" placeholder="accountCategory">
+        <label for="floatingInput">Account Category</label>
+      </div>
+     
+</form>
+<div>
+ <input  type="submit" class="btn btn-primary" value="Add" [disabled]="f.invalid">
+</div>

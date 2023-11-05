@@ -1,0 +1,57 @@
+<form #myForm="ngForm" (ngSubmit)="add(myForm)" class="row g-3">
+  <div class="col-md-9">
+    <label for="inputidproduit" class="form-label">Id Produit</label>
+    <input type="text" class="form-control" id="inputidproduit" required name="idproduit" [(ngModel)]="product.id" #idField="ngModel">
+    <div class="text-danger" *ngIf="idField.invalid && (idField.dirty || idField.touched)">ce champ est obligatoire!</div>
+  </div>
+  
+
+  <div class="col-md-9">
+    <label for="inputcode" class="form-label">Code</label>
+    <input type="text" class="form-control" id="inputcode" required pattern="[a-zA-Z0-9]{8}" [(ngModel)]="product.code">
+  </div>
+
+  <div class="col-md-9">
+    <label for="inputlibelle" class="form-label">Libelle</label>
+    <input type="text" class="form-control" id="inputlibelle" required minlength="3" [(ngModel)]="product.libelle">
+  </div>
+
+  <div class="col-md-9">
+    <label for="inputprixunitaire" class="form-label">Prix unitaire</label>
+    <input type="text" class="form-control" id="inputprixunitaire" required pattern="[1-9][0-9]*" [(ngModel)]="product.prixunitaire">
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" [disabled]="!myForm.form.valid"[hidden]="myForm.form.valid">Suivant</button>
+  </div>
+
+  <div class="col-md-9" *ngIf="myForm.form.valid">
+    <label for="inputdetails" class="form-label">Id détails produit</label>
+    <input type="text" class="form-control" id="inputdetails" required>
+  </div>
+
+  <div class="col-md-9" *ngIf="myForm.form.valid">
+    <label for="inputdate" class="form-label">Date création</label>
+    <input type="date" class="form-control" id="inputdate" name="dateCreation" required >
+  </div>
+  
+  <div class="col-md-9"  *ngIf="myForm.form.valid">
+    <label for="inputdatemodification" class="form-label">Date dernière modification</label>
+    <input type="date" class="form-control" id="inputdatemodification" required>
+  </div>
+
+  <div class="col-md-4" *ngIf="myForm.form.valid">
+    <label for="inputState" class="form-label">Catégorie produit</label>
+    <select id="inputState" class="form-select" required>
+      <option selected>Electromenager</option>
+      <option>Alimentaire</option>
+      <option>Quincaillerie</option>
+    </select>
+  </div>
+
+
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" [hidden]="!myForm?.form?.valid" [disabled]="!myForm?.form?.valid">Ajouter</button>
+  </div>
+</form>

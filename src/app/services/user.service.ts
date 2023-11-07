@@ -26,6 +26,9 @@ fetchNbInList(list: any, attribute:string, attributeVal: string){
 fetchAllUsers() {
   return this.HttpCLT.get(this.apiUrl);
 }
+fetchUserById(id:number) {
+  return this.HttpCLT.get<User>(this.apiUrl+id);
+}
 addUser(body:User){
     return this.HttpCLT.post(this.apiUrl,body);
 

@@ -39,6 +39,6 @@
       </div>
      
 </form>
-<div>
- <input  type="submit" class="btn btn-primary" value="Add" [disabled]="f.invalid">
+<div class="mb-3">
+  <input type="submit" class="btn btn-primary" [value]="id !== undefined ? 'Update' : 'Add'" [disabled]="f.invalid">
 </div>

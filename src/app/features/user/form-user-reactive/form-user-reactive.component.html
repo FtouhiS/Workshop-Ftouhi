@@ -1,0 +1,40 @@
+<form [formGroup]="forminput" (ngSubmit)="addUser()" class="form-container">
+    <div class="form-floating">
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="firstName">
+        <label for="firstName">First Name</label>
+        <div *ngIf="firstName!.invalid && (firstName!.touched || firstName!.dirty)"> First Name is required.</div>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName">
+        <label for="lastName">Last Name</label>
+
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="email" placeholder="name@esprit.tn" formControlName="email">
+        <label for="email">Email address</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+        <label for="password">Password</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="birthDate" placeholder="Birth Date" formControlName="birthDate">
+        <label for="birthDate">BirthDate</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="profession" placeholder="Profession" formControlName="profession">
+        <label for="profession">Profession</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="accountCategory" placeholder="Customer" formControlName="accountCategory">
+        <label for="accountCategory">Customer Category</label>
+    </div>
+ 
+    <button type="submit" class="submit-button" [disabled]="forminput.invalid" >Save</button>
+</form>

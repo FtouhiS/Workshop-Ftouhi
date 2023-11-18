@@ -10,8 +10,36 @@
       "password": "test",
       "picture": "https://bootdey.com/img/Content/avatar/avatar3.png",
       "profession": "Software Engineer"
+    },
+    {
+      "firstName": "Soulaima",
+      "lastName": "Ftouhi",
+      "email": "soulaima.ftouhi@gmail.com",
+      "password": "sousou123456",
+      "birthDate": "2023-11-13",
+      "profession": "customer",
+      "accountCategory": "CUSTOMER",
+      "id": 2
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "email": "soulaima.ftouhi@gmail.com",
+      "password": "dsdsA123",
+      "birthDate": "2023-11-14",
+      "profession": "customer",
+      "accountCategory": "CUSTOMER",
+      "id": 3
+    },
+    {
+      "firstName": "Soulaima",
+      "lastName": "Ftouhi",
+      "email": "soulaima.ftouhi@gmail.com",
+      "password": "azertyyuiop",
+      "birthDate": "2023-11-14",
+      "profession": "customer",
+      "accountCategory": "CUSTOMER",
+      "id": 4
     }
-   
-  
   ]
 }

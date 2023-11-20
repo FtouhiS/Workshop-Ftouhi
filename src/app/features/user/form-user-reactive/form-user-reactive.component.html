@@ -2,8 +2,10 @@
     <div class="form-floating">
         <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="firstName">
         <label for="firstName">First Name</label>
-        <div *ngIf="firstName!.invalid && (firstName!.touched || firstName!.dirty)"> First Name is required.</div>
-    </div>
+        <div class="alert alert-danger" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
+            <div *ngIf="firstName.errors!['required']"> FirstName is required !</div>
+            <div *ngIf="firstName.errors!['minlength']"> FirstName must be at least 3 characters !</div>
+        </div>    </div>
 
     <div class="form-floating">
         <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName">
